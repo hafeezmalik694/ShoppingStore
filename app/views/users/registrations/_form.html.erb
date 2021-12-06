@@ -1,0 +1,31 @@
+<%= form_for @user, url: registration_path(@user) do |f| %>
+  <%= render "users/shared/error_messages", resource: @user %>
+  <div class="form-group">
+    <label> Email address</label>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-sm", required: true %>
+  </div>
+  <div class="form-group">
+    <label> First Name</label>
+    <%= f.text_field :first_name, autocomplete: "first name", class: "form-control form-control-sm", required: true %>
+  </div>
+  <div class="form-group">
+    <label> Last Name</label>
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last name", class: "form-control form-control-sm", required: true %>
+  </div>
+  <div class="form-group">
+    <label>Phone Number</label>
+    <%= f.telephone_field :phone_number, autofocus: true, autocomplete: "Your Phone Number", class: "form-control form-control-sm", required: true %>
+  </div>
+  <div class="form-group">
+    <label> Password</label>
+    <%= f.password_field :password, autofocus: true, autocomplete: "password", class: "form-control form-control-sm", required: true %>
+  </div>
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "confirm password", class: "form-control form-control-sm", required: true %>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+  <div class="sign-up">
+    Already have an account? <a href="<%= new_user_session_path %>">Sign In</a>
+  </div>
+<% end %>
